@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Predicting Chances of Heart Disease</title>
+      <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
+   <body>
+      <h1>Predict Chances of Heart Disease</h1>
+      <div class="ml-container">
+         <form action="{{ url_for('predict')}}" method="post">
+            <input type="text" name="age" id="age" required="required" placeholder="Enter your age">
+            <br/>
+            <select name="sex" id="sex" required="required">
+               <option selected>Select you sex</option>
+               <option value="0">Female</option>
+               <option value="1">Male</option>
+            </select>
+            <br/>
+            <select name="cp" id="cp" required="required">
+               <option selected>Select your chest pain type</option>
+               <option value="0">Typical</option>
+               <option value="1">Atypical</option>
+               <option value="2">Non-anginal</option>
+               <option value="3">Asymptomatic</option>
+            </select>
+            <br/>
+            <input type="text" id="trestbps" name="trestbps" required="required" placeholder="Enter your resting blood pressure (in mmHg)">
+            <br/>
+            <input type="text" id="chol" name="chol" required="required" placeholder="Enter your cholesterol level (in mg/dL)">
+            <br/>
+            <select name="fbs" id="fbs" required="required">
+               <option selected>Is your fasting blood sugar greater than 120 mg/dL?</option>
+               <option value=1>Yes</option>
+               <option value=0>No</option>
+            </select>
+            <br/>
+            <select name="restecg" id="restecg" required="required">
+               <option selected>Select your ECG Category</option>
+               <option value=0>Normal</option>
+               <option value=1>Abnormal</option>
+               <option value=2>Hypertrophy</option>
+            </select>
+            <br/>
+            <input type="text" name="thalach" id="thalach" required="required" placeholder="Select maximum heart rate (in bpm)">
+            <br/>
+            <select name="exang" id="exang" required="required">
+               <option selected>Do you have angina after exercising?</option>
+               <option value=0>No</option>
+               <option value=1>Yes</option>
+            </select>
+            <br/>
+            <input type="text" id="oldpeak" name="oldpeak" required="required" placeholder="Enter ST depression">
+            <br/>
+            <select name="slope" id="slope" required="required">
+               <option selected>Select your ST segment slope characteristic</option>
+               <option value=0>Upsloping</option>
+               <option value=1>Flat</option>
+               <option value=2>Downsloping</option>
+            </select>
+            <br/>
+            <input type="text" id="ca" name="ca" required="required" placeholder="Select number of major vessels [0 to 4]">
+            <br/>
+            <select name="thal" id="thalium" required="required">
+               <option selected>Select your thalium stress test result</option>
+               <option value=0>Normal</option>
+               <option value=1>Fixed</option>
+               <option value=2>Reversible</option>
+            </select>
+            <br/>
+            <input type="submit" class="button1" value="Predict">
+         </form>
+      </div>
+   </body>
+</html>

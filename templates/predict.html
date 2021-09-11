@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Predicting Chances of Heart Disease</title>
+      <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
+   <body>
+      <h1>Predict Chances of Heart Disease</h1>
+      <div class="results">
+			{% if prediction==1 %}
+				<h2>Prediction: <span class='danger'>Possibly have Heart Disease</span></h2>
+
+			{% elif prediction==0 %}
+				<h1>Prediction: <span class='safe'>Likely don't have Heart Disease</span></h1>
+
+			{% endif %}
+		</div>
+    </body>
+ </html>
